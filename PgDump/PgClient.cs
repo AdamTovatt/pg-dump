@@ -38,8 +38,8 @@ namespace PgDump
         /// <exception cref="TimeoutException">Thrown when the operation exceeds the specified timeout.</exception>
         public async Task DumpAsync(IOutputProvider outputProvider, TimeSpan timeout, DumpFormat format = DumpFormat.Tar, CancellationToken cancellationToken = default)
         {
-            using CancellationTokenSource timeoutCts = new CancellationTokenSource(timeout);
-            using CancellationTokenSource linkedCts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken, timeoutCts.Token);
+            using CancellationTokenSource timeoutCancellationTokenSource = new CancellationTokenSource(timeout);
+            using CancellationTokenSource linkedCancellactionTokenSource = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken, timeoutCancellationTokenSource.Token);
 
             string formatArgument = GetFormatArgument(format);
 
@@ -57,14 +57,14 @@ namespace PgDump
 
             using IRunningProcess process = _processStarter.Start(startInfo);
 
-            Task copyTask = outputProvider.WriteAsync(process.StandardOutput.BaseStream, linkedCts.Token);
-            Task<string> errorTask = ReadStandardErrorAsync(process.StandardError, linkedCts.Token);
+            Task copyTask = outputProvider.WriteAsync(process.StandardOutput.BaseStream, linkedCancellactionTokenSource.Token);
+            Task<string> errorTask = ReadStandardErrorAsync(process.StandardError, linkedCancellactionTokenSource.Token);
 
             try
             {
                 await copyTask;
             }
-            catch (OperationCanceledException) when (timeoutCts.IsCancellationRequested)
+            catch (OperationCanceledException) when (timeoutCancellationTokenSource.IsCancellationRequested)
             {
                 try
                 {
