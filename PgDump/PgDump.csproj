@@ -20,6 +20,7 @@
     <SignAssembly>False</SignAssembly>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <PackageIcon>Icon.png</PackageIcon>
+    <Authors>Adam Tovatt</Authors>
   </PropertyGroup>
 
   <ItemGroup>
