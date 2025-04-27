@@ -1,4 +1,4 @@
-# PgDump
+<h1 align="left"><img src="https://raw.githubusercontent.com/AdamTovatt/pg-dump/master/Icon/Icon.png" alt="PgDump Logo" width="48" height="48" style="vertical-align: middle; margin-left: 10px;" /> PgDump</h1>
 
 [![NuGet Version](https://img.shields.io/nuget/v/PgDump.svg)](https://www.nuget.org/packages/PgDump/)
 [![NuGet Downloads](https://img.shields.io/nuget/dt/PgDump.svg)](https://www.nuget.org/packages/PgDump/)
