@@ -1,0 +1,6 @@
+.vs
+PgDump/bin/*
+PgDump/obj/*
+PgDumpTests/bin/*
+PgDumpTests/obj/*
+TestResults

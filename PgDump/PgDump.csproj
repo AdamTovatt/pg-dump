@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>PgDump</Title>
+    <Company>Adam Tovatt</Company>
+    <Description>Minimalistic library for using pg_dump from C#</Description>
+    <Copyright>MIT</Copyright>
+  </PropertyGroup>
+
+</Project>
