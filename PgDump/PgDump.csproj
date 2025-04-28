@@ -10,10 +10,10 @@
     <Description>Use pg_dump easily from C# to backup PostgreSQL databases - dump to file, memory, or your own custom stream with full async and timeout support.</Description>
     <Copyright>MIT</Copyright>
     <PackageProjectUrl>https://github.com/AdamTovatt/pg-dump</PackageProjectUrl>
-    <PackageReadmeFile>readme.md</PackageReadmeFile>
+    <PackageReadmeFile>readme-nuget.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/AdamTovatt/pg-dump</RepositoryUrl>
     <PackageTags>PostgreSQL pg_dump psql database backup dump export C# async command-line wrapper streaming output-provider .net pgsql 8 stream in memory</PackageTags>
-    <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+    <PackageReleaseNotes>Update readme</PackageReleaseNotes>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <IncludeSymbols>True</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
@@ -23,7 +23,7 @@
     <Authors>Adam Tovatt</Authors>
     <AssemblyVersion>1.0.1</AssemblyVersion>
     <FileVersion>1.0.1</FileVersion>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -31,7 +31,7 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <None Include="..\readme.md">
+    <None Include="..\readme-nuget.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
