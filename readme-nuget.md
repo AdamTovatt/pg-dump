@@ -109,6 +109,26 @@ foreach (string database in databases)
     Console.WriteLine(database);
 }
 ```
+
+---
+
+## Restoring database dumps
+
+This package does not have support for restoring database dump files since that is a bit more complicated than just creating the dump file. It's also something that is not done as often and even less often done by an automated service.
+
+#### To restore a database dump you can do it manually with pg_restore
+The following command is an example of how to do that:
+```
+pg_restore --verbose --clean --no-acl --no-owner -h [host] -U [user] -d [database_name] [dump_file_with_file_extension]
+```
+The `[host]` should be replaced by the host name, that's an ip address, url or similar. Can for example be `localhost`.
+
+The `[user]` is the username to login with.
+
+The `[database_name]` is the database to restore the dump file to. This database must already exist. If you for example want to restore your dumpfile `my-dump.sql` to create a database `my-restored-db` you need to first manually create that database. Then you can use pg_restore and put `my-restored-db` as the database.
+
+The `[dump_file_with_file_extension]` is the full relative path to the dump file, inlcuding the file extension. If you are standing in the same directory as the file with the terminal you're using, then that would be just the file name.
+
 ---
 # Getting into details:
 The following sections explain the parameters and features of the library in greater detail.
