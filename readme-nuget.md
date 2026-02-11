@@ -37,7 +37,7 @@ This library makes it easy to use `pg_dump` directly from your C# applications, 
 ## Installation
 **NuGet** package available here:
 https://www.nuget.org/packages/PgDump/
-*(uses .NET 8)*
+*(uses .NET 10)*
 
 ## Quick Start
 
@@ -168,7 +168,7 @@ Task DumpAsync(IOutputProvider outputProvider, TimeSpan timeout, DumpFormat form
 
 ---
 
-### ⚡ How timeout and cancellationToken work together
+### How timeout and cancellationToken work together
 
 - **Either** timeout expiration **or** `cancellationToken` cancellation will immediately cancel the operation.
 - If timeout happens first → you get a `TimeoutException`.
