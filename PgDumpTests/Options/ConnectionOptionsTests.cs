@@ -6,31 +6,31 @@ namespace PgDumpTests.Options
     public class ConnectionOptionsTests
     {
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void Constructor_ThrowsArgumentNullException_WhenHostIsNull()
         {
-            _ = new ConnectionOptions(null!, 5432, "user", "pass", "db");
+            Assert.Throws<ArgumentNullException>(() 
+                => new ConnectionOptions(null!, 5432, "user", "pass", "db"));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void Constructor_ThrowsArgumentNullException_WhenUsernameIsNull()
         {
-            _ = new ConnectionOptions("localhost", 5432, null!, "pass", "db");
+            Assert.Throws<ArgumentNullException>(()
+               => new ConnectionOptions("localhost", 5432, null!, "pass", "db"));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void Constructor_ThrowsArgumentNullException_WhenPasswordIsNull()
         {
-            _ = new ConnectionOptions("localhost", 5432, "user", null!, "db");
+            Assert.Throws<ArgumentNullException>(()
+               => new ConnectionOptions("localhost", 5432, "user", null!, "db"));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void Constructor_ThrowsArgumentNullException_WhenDatabaseIsNull()
         {
-            _ = new ConnectionOptions("localhost", 5432, "user", "pass", null!);
+            Assert.Throws<ArgumentNullException>(()
+               => new ConnectionOptions("localhost", 5432, "user", "pass", null!));
         }
 
         [TestMethod]

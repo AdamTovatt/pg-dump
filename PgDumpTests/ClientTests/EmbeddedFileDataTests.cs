@@ -50,7 +50,7 @@ namespace PgDumpTests.ClientTests
             TimeSpan timeout = TimeSpan.FromSeconds(5);
 
             // Act & Assert
-            await Assert.ThrowsExceptionAsync<IOException>(async () =>
+            await Assert.ThrowsAsync<IOException>(async () =>
             {
                 await client.DumpAsync(outputProvider, timeout, DumpFormat.Tar, CancellationToken.None);
             });
